@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiBlockchain"
+    x:Class="MauiBlockchain.MainPage"
+    BackgroundColor="#BDBDBD">
+    <Grid
+        RowDefinitions="*,2*"
+        RowSpacing="0"
+        >
+        
+        <VerticalStackLayout
+            Margin="0,40,0,0"
+            Spacing="40"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            >
+            <Image
+                HeightRequest="100"
+                WidthRequest="100"
+                Aspect="AspectFit"
+                Source="eth_glyph_colored"
+                />
+            
+            <Label
+                Text="MAUI Blockchain Auth"
+                TextColor="Black"
+                FontSize="28"
+            />
+        </VerticalStackLayout>
+            
+        
+        <!-- WALLET CONNECT BUTTON -->
+        <Border
+            x:Name="buttonContainter"
+            Grid.Row="1"
+            Margin="60,100"
+            HorizontalOptions="Fill"
+            VerticalOptions="Start"
+            BackgroundColor="White"
+            Stroke="Transparent"
+            StrokeShape="RoundRectangle 22"
+        >
+            <Grid>
+                <Image
+                    ZIndex="2"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Source="wallet_connect_logo"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    InputTransparent="True"
+                    Margin="0,0,190,0"
+                />
+                
+                <local:WalletConnectButton
+                    x:Name="walletConnectButton"
+                    HeightRequest="44"
+                    Padding="20,0,0,0"
+                    CornerRadius="22"
+                    HorizontalOptions="Fill"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                />
+            </Grid>
+        </Border>
+        
+        <!-- USER INFORMATION -->
+        <Border
+            Grid.Row="2"
+            Margin="20"
+            StrokeThickness="0"
+            StrokeShape="RoundRectangle 20"
+            IsVisible="False"
+            x:Name="dataContainer"
+            >
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="20"
+                BackgroundColor="#E0E0E0"
+                IsVisible="True"
+                >
+                <Label
+                    Text="User Information"
+                    TextColor="Black"
+                    FontSize="24"
+                    />
+                <Label
+                    Text="Wallet Name"
+                    TextColor="Gray"
+                    FontSize="12"
+                    />
+                <Label
+                    x:Name="walletNameLabel"
+                    TextColor="Black"
+                    Margin="0,-18,0,0"
+                    FontSize="18"
+                    />
+                <Label
+                    Text="User Address"
+                    TextColor="Gray"
+                    FontSize="12"
+                />
+                <Label
+                    x:Name="userAddressLabel"
+                    TextColor="Black"
+                    Margin="0,-18,0,0"
+                    FontSize="18"
+                />
+                <Label
+                    Text="User Public Key"
+                    TextColor="Gray"
+                    FontSize="12"
+                />
+                <Label
+                    x:Name="userPublicKeyLabel"
+                    TextColor="Black"
+                    Margin="0,-18,0,0"
+                    FontSize="18"
+                />
+                <Label
+                    Text="Authentication Nonce"
+                    TextColor="Gray"
+                    FontSize="12"
+                />
+                <Label
+                    x:Name="authNonceLabel"
+                    TextColor="Black"
+                    Margin="0,-18,0,0"
+                    FontSize="18"
+                />
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

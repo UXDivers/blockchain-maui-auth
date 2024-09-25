@@ -1,0 +1,11 @@
+*.DS_Store
+.vs/
+**/bin/
+**/obj/
+*.csproj.user
+dist/*
+Directory.Build.targets
+.idea/
+.vscode/
+**/.meteor/
+**/*.resources
